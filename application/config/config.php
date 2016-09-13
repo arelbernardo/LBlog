@@ -30,7 +30,7 @@ $config['base_url'] = 'http://localhost:8080/LBlog/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +110,7 @@ $config['enable_hooks'] = FALSE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'Core_';
 
 /*
 |--------------------------------------------------------------------------
@@ -499,3 +499,40 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+
+
+/*
+| -------------------------------------------------------------------------
+| Native spl_autoload_register() - by Kenneth Vogt
+| -------------------------------------------------------------------------
+|
+| Here is an updated version of Phil Sturgeon?s code:
+|
+| Thanks to Phil Sturgeon Kenneth Vogt and InsiteFX.
+|
+| NOTE:
+| Requires PHP 5.3.+
+| As of CI 3.0 Dev - The constant EXT has been removed modified
+| to use '.php' now instead of EXT.
+| should work for all version of CI and PHP 5.3
+|
+| Place at the bottom of your ./application/config/config.php file.
+| -------------------------------------------------------------------------
+*/
+
+spl_autoload_register(function($class)
+{
+    if (strpos($class, 'CI_') !== 0)
+    {
+        if (file_exists($file = APPPATH . 'core/' . $class . '.php'))
+        {
+            include $file;
+        }
+        elseif (file_exists($file = APPPATH . 'libraries/' . $class . '.php'))
+        {
+            include $file;
+        }
+    }
+});
