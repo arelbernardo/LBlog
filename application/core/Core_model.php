@@ -10,6 +10,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * @property CI_DB_active_record $db                    This is the platform-independent base Active Record implementation class.
  * @property CI_Loader $load                            Loads views and files
  */
+class Core_model extends CI_Model
 {
     function __construct() {
         parent::__construct();

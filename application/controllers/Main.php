@@ -9,6 +9,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Main extends core_controller
 {
     function __construct() {
+        parent::__construct();
     }
 
     function index() {
