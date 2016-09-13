@@ -17,7 +17,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost:8080/LBlog/';
+//$config['base_url'] = 'http://http://handsome-sitaw.site88.net/';
 
 /*
 |--------------------------------------------------------------------------
