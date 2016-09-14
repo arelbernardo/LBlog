@@ -8,16 +8,19 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Main extends Core_controller
 {
+    const IS_MAIN_PAGE = true;
     private $session;
-    function __construct() {
-        $this->session = parent::__construct();
+
+    public function __construct() {
+        $this->session = parent::__construct(SELF::IS_MAIN_PAGE);
     }
 
-    function index() {
+    public function index() {
         $pageContent = array(
-            "head" => 'template/head_assets/mainpage_welcome',
+            "head" => 'template/head_assets/welcome_head',
             "hasSession" => $this->session['hasActiveSession'],
-            "body" => 'template/body_assets/mainpage_greetings_body'
+            "naviBarFlag" => 'Main',
+            "body" => 'template/body_assets/welcome_body'
         );
         $this->load->view('template/master_view', $pageContent);
     }

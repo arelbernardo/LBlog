@@ -1,3 +1,46 @@
 .body-content {
+    margin-top: 60px;
+    background-color: rgba(221, 221, 221, 0.27);
+    min-height: 900px;
+}
 
+@media (max-width: 768px) {
+    .body-content {
+        margin-top: 123px;
+    }
+}
+
+/*input type elements */
+
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=password],
+textarea,
+select{
+    border: 1px solid #d3d3d3;
+}
+
+textarea {
+    resize: none;
+}
+
+/*Overriding bootstrap panel*/
+
+.panel {
+    background-color: rgba(221, 221, 221, 0.50);
+}
+
+.panel-default {
+    border: 0 !important;
+}
+
+.panel-default>.panel-heading {
+    background-color: rgba(221, 221, 221, 0.33); !important;
+    border-color: rgba(221, 221, 221, 0.39);
+}
+
+.panel-footer {
+    background-color: rgba(221, 221, 221, 0.23); !important;
+    border-color: rgba(221, 221, 221, 0.39);
 }

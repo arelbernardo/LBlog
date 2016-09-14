@@ -11,16 +11,25 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Core_controller extends CI_Controller
 {
-    public function __construct() {
+    public function __construct($isHomepage = false) {
         parent::__construct();
         if(session_id() == '') {
             session_start();
         }
         $this->load->library('common/Session_helper');
-        return $this->_validateSession();
+        return $this->_validateSession($isHomepage);
     }
 
-    private function _validateSession() {
-        return $this->session_helper->hasActiveSession();
+    private function _validateSession($isHomepage) {
+        $session = $this->session_helper->hasActiveSession();
+        if($isHomepage) {
+            return $session;
+        } else {
+            if($session['hasActiveSession']) {
+                Redirect(site_url("Main"));
+            } else {
+                return $session;
+            }
+        }
     }
 }

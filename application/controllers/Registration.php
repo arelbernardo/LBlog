@@ -8,12 +8,20 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Registration extends Core_controller
 {
+    private $hasSession;
+
     public function __construct() {
-        parent::__construct();
+        $this->hasSession = parent::__construct();
     }
 
 
     public function index() {
-
+        $pageContent = array(
+            "head" => 'template/head_assets/registration_head',
+            "hasSession" => $this->hasSession['hasActiveSession'],
+            "naviBarFlag" => 'Registration',
+            "body" => 'template/body_assets/registration_body'
+        );
+        $this->load->view('template/master_view', $pageContent);
     }
 }

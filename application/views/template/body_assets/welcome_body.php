@@ -1,32 +1,4 @@
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/viewmodel/welcome/homepageFormViewModel.js"></script>
-<nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">LBlog</a>
-        </div>
-        <ul class="nav navbar-nav">
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <?php
-                if($hasSession) {
-                    echo '
-                        <li id="btnSignUp"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    ';
-                } else {
-                    echo '
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    ';
-                }
-            ?>
-        </ul>
-    </div>
-</nav>
-</div>
-
-<div class="body-content container" id="body-welcome-page">
+<div class="body-content container">
     <div id="div-container-form">
         <div id="greetings-container">
             <h1>Welcome!</h1>
@@ -61,8 +33,3 @@
         </div>
     </div>
 </div>
-<script>
-    $(function() {
-        homepageFormViewModel.initialize();
-    });
-</script>
