@@ -500,39 +500,15 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-
-
-
-/*
-| -------------------------------------------------------------------------
-| Native spl_autoload_register() - by Kenneth Vogt
-| -------------------------------------------------------------------------
-|
-| Here is an updated version of Phil Sturgeon?s code:
-|
-| Thanks to Phil Sturgeon Kenneth Vogt and InsiteFX.
-|
-| NOTE:
-| Requires PHP 5.3.+
-| As of CI 3.0 Dev - The constant EXT has been removed modified
-| to use '.php' now instead of EXT.
-| should work for all version of CI and PHP 5.3
-|
-| Place at the bottom of your ./application/config/config.php file.
-| -------------------------------------------------------------------------
-*/
-
-spl_autoload_register(function($class)
-{
-    if (strpos($class, 'CI_') !== 0)
+function my_autoloader($class) {
+    if (file_exists($file = APPPATH . 'core/' . $class . '.php'))
     {
-        if (file_exists($file = APPPATH . 'core/' . $class . '.php'))
-        {
-            include $file;
-        }
-        elseif (file_exists($file = APPPATH . 'libraries/' . $class . '.php'))
-        {
-            include $file;
-        }
+        include $file;
     }
-});
+    elseif (file_exists($file = APPPATH . 'libraries/' . $class . '.php'))
+    {
+        include $file;
+    }
+}
+
+spl_autoload_register('my_autoloader');

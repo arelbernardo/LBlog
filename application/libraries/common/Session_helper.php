@@ -15,7 +15,7 @@ class Session_helper
     }
 
     public function hasActiveSession() {
-        return array("hasActiveSession" => false);
+        return array("hasActiveSession" => true);
     }
 
     public function setActiveSession() {

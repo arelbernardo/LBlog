@@ -7,7 +7,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Time: 8:21 PM
  *
  * @property CI_Loader $load                            Loads views and files
- * @property session_helper $session_helper                    session helper
+ * @property session_helper $session_helper             session helper
  */
 class Core_controller extends CI_Controller
 {
@@ -21,6 +21,6 @@ class Core_controller extends CI_Controller
     }
 
     private function _validateSession() {
-       return $this->session_helper->hasActiveSession();
+        return $this->session_helper->hasActiveSession();
     }
 }
