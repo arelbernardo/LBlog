@@ -8,9 +8,4 @@
     );
     $this->load->view($body);
 ?>
-<script>
-    $(function() {
-        baseViewModel.initialize("<?php echo base_url(); ?>");
-    });
-</script>
 </body>

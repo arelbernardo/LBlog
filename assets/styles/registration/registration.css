@@ -13,3 +13,20 @@ body {
 #registration-form {
 
 }
+
+#registration-header {
+    color: #ffffff;
+}
+
+#registration-panel-form {
+    /*background-color: rgba(221, 221, 221, 0.27);*/
+    padding-top: 15px;
+}
+
+#registration-content-description{
+    color: #ffffff;
+    /*background-color: rgba(221, 221, 221, 0.27);*/
+}
+.reg-content {
+    margin-top: 15px;
+}

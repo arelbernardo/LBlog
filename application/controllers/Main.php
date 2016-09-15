@@ -8,6 +8,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Main extends Core_controller
 {
+    #constructor region
     const IS_MAIN_PAGE = true;
     private $session;
 
@@ -15,6 +16,7 @@ class Main extends Core_controller
         $this->session = parent::__construct(SELF::IS_MAIN_PAGE);
     }
 
+    #public region
     public function index() {
         $pageContent = array(
             "head" => 'template/head_assets/welcome_head',
@@ -24,4 +26,5 @@ class Main extends Core_controller
         );
         $this->load->view('template/master_view', $pageContent);
     }
+    #end region
 }

@@ -28,7 +28,7 @@ textarea {
 /*Overriding bootstrap panel*/
 
 .panel {
-    background-color: rgba(221, 221, 221, 0.50);
+    background-color: rgba(221, 221, 221, 0.33);
 }
 
 .panel-default {
@@ -41,6 +41,12 @@ textarea {
 }
 
 .panel-footer {
-    background-color: rgba(221, 221, 221, 0.23); !important;
-    border-color: rgba(221, 221, 221, 0.39);
+    background-color: rgba(221, 221, 221, 0.33); !important;
+    border-color: rgba(221, 221, 221, 0.66);
+}
+
+/*jquery ui datepicker conflict with bootstrap*/
+
+table.ui-datepicker-calendar{
+    background-color: #ffffff !important;
 }

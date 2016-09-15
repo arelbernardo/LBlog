@@ -8,13 +8,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Registration extends Core_controller
 {
+    #constructor region
     private $hasSession;
 
     public function __construct() {
         $this->hasSession = parent::__construct();
     }
 
-
+    #public region
     public function index() {
         $pageContent = array(
             "head" => 'template/head_assets/registration_head',
@@ -24,4 +25,5 @@ class Registration extends Core_controller
         );
         $this->load->view('template/master_view', $pageContent);
     }
+    #end region
 }

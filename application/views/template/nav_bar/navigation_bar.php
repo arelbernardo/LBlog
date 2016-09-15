@@ -47,5 +47,6 @@
 <script>
     $(function() {
         homepageFormViewModel.initialize();
+        baseViewModel.initialize("<?php echo base_url(); ?>");
     });
 </script>
