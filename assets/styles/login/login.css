@@ -1,0 +1,23 @@
+body {
+    background: url('../../images/backgrounds/background_1.jpg') no-repeat center center fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#login-header {
+    color: #ffffff;
+}
+
+#login-container {
+    padding-top: 15px;
+}
+
+#login-content-description {
+    color: #ffffff;
+}
+
+.login-content {
+    margin-top: 50px;
+}
