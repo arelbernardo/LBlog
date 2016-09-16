@@ -2,7 +2,7 @@
     <div id="div-container-form">
         <div id="greetings-container">
             <h1>Welcome!</h1>
-                </br></br></br>
+                </br></br>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit magna velit, quis dapibus odio gravida id.
                 Sed dictum efficitur laoreet. Curabitur ex tortor, laoreet sit amet nibh vitae, aliquet luctus nunc. Nunc viverra

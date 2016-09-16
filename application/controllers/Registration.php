@@ -11,10 +11,10 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Registration extends Core_controller
 {
     #constructor region
-    private $hasSession;
+    private $session;
 
     public function __construct() {
-        $this->hasSession = parent::__construct();
+        $this->session = parent::__construct();
         $this->load->model("RegistrationModel");
         $this->load->model("ValidationModel");
     }
@@ -22,10 +22,9 @@ class Registration extends Core_controller
     #public region
     public function index() {
         $pageContent = array(
-            "head" => 'template/head_assets/registration_head',
-            "hasSession" => $this->hasSession['hasActiveSession'],
-            "naviBarFlag" => 'Registration',
-            "body" => 'template/body_assets/registration_body'
+            "hasSession" => $this->session['hasActiveSession'],
+            "headFlags" => 'Registration',
+            "body" => 'template/body_content/registration_body'
         );
         $this->load->view('template/master_view', $pageContent);
     }

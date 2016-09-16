@@ -1,8 +1,8 @@
 <body>
 <?php
-    $this->load->view('template/nav_bar/navigation_bar',
+    $this->load->view('template/navigation_bar',
         array(
-            "naviBarFlag" => $naviBarFlag,
+            "headFlags" => $headFlags,
             "hasSession" => $hasSession
         )
     );

@@ -21,10 +21,9 @@ class Main extends Core_controller
     public function index()
     {
         $pageContent = array(
-            "head" => 'template/head_assets/welcome_head',
             "hasSession" => $this->session['hasActiveSession'],
-            "naviBarFlag" => 'Main',
-            "body" => 'template/body_assets/welcome_body'
+            "headFlags" => 'Main',
+            "body" => 'template/body_content/welcome_body'
         );
         $this->load->view('template/master_view', $pageContent);
     }
