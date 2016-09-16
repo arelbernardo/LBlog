@@ -172,14 +172,12 @@ var registrationFormViewModel = {
             messageColorClass = 'alert-success';
             messageTitle = "Success";
         }
-        $("#saving-registration-response-message").show();
         $("#saving-registration-response-message").html('<div class="alert ' + messageColorClass + '">' +
             '<strong>' + messageTitle + ': </strong> ' + errorMessage +
             '</div>');
     },
 
     hideMessageResponse: function() {
-        $("#saving-registration-response-message").hide();
         $("#saving-registration-response-message").html('');
     },
 

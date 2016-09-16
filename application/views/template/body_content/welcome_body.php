@@ -1,8 +1,8 @@
 <div class="body-content container">
-    <div id="greetings-container">
-        <h1>Welcome!</h1>
+    <div id="greetings-container-header">
+        <h1 id="greetings-container-header">Hi <?php echo $profileName = isset($_SESSION['username']) ? $_SESSION['username'] : "there"; ?>! :)</h1>
             </br></br>
-        <p>
+        <p id="greetings-container-body">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit magna velit, quis dapibus odio gravida id.
             Sed dictum efficitur laoreet. Curabitur ex tortor, laoreet sit amet nibh vitae, aliquet luctus nunc. Nunc viverra
             metus non ullamcorper bibendum. Duis a volutpat tellus. Aenean mattis bibendum nunc, nec pharetra nisi sollicitudin

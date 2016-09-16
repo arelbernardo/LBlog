@@ -15,10 +15,16 @@ class Session_helper
     }
 
     public function hasActiveSession() {
-        return array("hasActiveSession" => false);
+        return array(
+            "hasActiveSession" => isset($_SESSION['username'])
+        );
     }
 
-    public function setActiveSession() {
+    public function setActiveSession($username) {
+        $_SESSION['username'] = $username;
+    }
 
+    public function destroyActiveSession() {
+        unset($_SESSION['username']);
     }
 }

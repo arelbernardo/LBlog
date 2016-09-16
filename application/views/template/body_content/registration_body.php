@@ -7,9 +7,7 @@
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 reg-content" id="registration-content">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="form-group" id="saving-registration-response-message">
-
-                    </div>
+                    <div class="form-group" id="saving-registration-response-message"></div>
                     <div class="form-group">
                         <label class="required-fields-legend"> * fields are required</label>
                     </div>
@@ -45,7 +43,7 @@
                     <label id="lblEmailValidation" class="form-label-validation-required">&nbsp;</label>
                 </div>
                 <div class="panel-footer text-right">
-                    <input type="button" class="btn btn-success" id="btnSignUp" value="Sign Up">
+                    <input type="button" class="btn btn-primary" id="btnSignUp" value="Sign Up">
                 </div>
             </div>
         </div>

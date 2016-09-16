@@ -23,7 +23,7 @@
                         <label id="lblPasswordValidation" class="form-label-validation-required">&nbsp;</label>
                     </div>
                     <div class="panel-footer text-right">
-                        <input type="button" class="btn btn-success" id="btnLogin" value="Log in"/>
+                        <input type="button" class="btn btn-primary" id="btnLogin" value="Log in"/>
                     </div>
                 </div>
             </div>

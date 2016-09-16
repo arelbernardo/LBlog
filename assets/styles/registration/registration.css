@@ -1,9 +1,5 @@
 body {
-    background: url('../../images/backgrounds/background_3.jpg') no-repeat center center fixed;
-    webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
 }
 
 #registration-container {
@@ -11,16 +7,13 @@ body {
 }
 
 #registration-header {
-    color: #ffffff;
+    color: #684a08;
 }
 
 #registration-panel-form {
     padding-top: 15px;
 }
 
-#registration-content-description{
-    color: #ffffff;
-}
 .reg-content {
     margin-top: 15px;
 }

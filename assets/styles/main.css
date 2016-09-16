@@ -1,6 +1,38 @@
+/*
+======================================
+=============STYLING INFO=============
+======================================
+    title color: #684a08;
+    panel,
+    panel border,
+    panel heading,
+          color: #E0E0E0;
+    panel bottom
+          border: #BDBDBD;
+    other text
+          color: default;
+    required label
+          color: 684a08;
+
+======================================
+==REMOVED BACKGROUND IMAGES PER PAGE==
+======================================
+    background: url('../../images/backgrounds/background_2.jpg') no-repeat center center fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+======================================
+=======OLD CONTAINER BACKGROUND=======
+======================================
+background-color: rgba(221, 221, 221, 0.33);
+
+*/
+
 .body-content {
     margin-top: 60px;
-    background-color: rgba(221, 221, 221, 0.27);
+    /*background-color: rgba(221, 221, 221, 0.33);*/
     min-height: 900px;
 }
 
@@ -42,37 +74,31 @@ select.fieldRequired {
 
 .required-fields-legend {
     font-size: 11px;
-    color: #ffffff;
+    color: #684a08;
     font-weight: 100;
     font-style: italic;
 }
 .form-label-validation-required {
-    color:#ffffff;
+    color: #684a08;
     font-weight: 100;
 }
 
 /*Overriding bootstrap panel*/
 
 .panel {
-    background-color: rgba(221, 221, 221, 0.33);
+    background-color: #E0E0E0;
 }
 
 .panel-default {
-    border: 0 !important;
+    border: medium !important;
 }
 
 .panel-default>.panel-heading {
-    background-color: rgba(221, 221, 221, 0.33); !important;
-    border-color: rgba(221, 221, 221, 0.39);
+    background-color: #E0E0E0 !important;
+    border-color: #E0E0E0;
 }
 
 .panel-footer {
-    background-color: rgba(221, 221, 221, 0.33); !important;
-    border-color: rgba(221, 221, 221, 0.66);
-}
-
-/*jquery ui datepicker conflict with bootstrap*/
-
-table.ui-datepicker-calendar{
-    background-color: #ffffff !important;
+    background-color: #E0E0E0 !important;
+    border-color: #BDBDBD;
 }

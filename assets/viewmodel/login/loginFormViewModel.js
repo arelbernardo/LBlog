@@ -29,6 +29,7 @@ var loginFormViewModel = {
         });
 
         $("#btnLogin").click(function() {
+            form.hideMessageResponse();
             if(form.validateFields()) {
                 form.loginToAccount();
             }
@@ -64,12 +65,44 @@ var loginFormViewModel = {
 
     loginToAccount: function() {
         var form = this;
-        //todo by tomorrow
-        alert("validate credentials");
-        /*$.ajax({
-           url: baseViewModel.baseUrl + baseViewModel.loginToAccountUrl,
+        $.ajax({
+            url: baseViewModel.baseUrl + baseViewModel.loginToAccountUrl,
+            type: 'post',
+            async: false,
+            data: {
+                data: form.model.getData()
+            },
+            success: function(data) {
+                var response = $.parseJSON(data);
+                if(response.hasRecord) {
+                    window.location.href = baseViewModel.baseUrl + baseViewModel.homepageUrl;
+                } else {
+                    form.showMessageResponse(false);
+                    $("#txtPassword").val('');
+                }
+            }
+        });
+    },
 
-        });*/
+    showMessageResponse: function(isRegistered) {
+        var form = this;
+        var messageColorClass = '', messageTitle = '', messageContent = '';
+        if(isRegistered) {
+            messageColorClass = 'alert-success';
+            messageTitle = "Success";
+            messageContent = "Welcome " + form.model.username;
+        } else {
+            messageColorClass = 'alert-warning';
+            messageTitle = "Error";
+            messageContent = "Login failed";
+        }
+        $("#login-response-message").html('<div class="alert ' + messageColorClass + '">' +
+            '<strong>' + messageTitle + ': </strong> ' + messageContent +
+            '</div>');
+    },
+
+    hideMessageResponse: function() {
+        $("#login-response-message").html('');
     }
 
 }

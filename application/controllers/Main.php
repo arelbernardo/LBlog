@@ -27,5 +27,10 @@ class Main extends Core_controller
         );
         $this->load->view('template/master_view', $pageContent);
     }
+
+    public function memberLogout() {
+        $this->session_helper->destroyActiveSession();
+        Redirect(site_url("Main"));
+    }
     #end region
 }

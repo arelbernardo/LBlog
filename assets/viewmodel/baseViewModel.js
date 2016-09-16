@@ -3,6 +3,11 @@ var baseViewModel = {
     serverDate: null,
 
     //links
+    //Main
+    memberLogoutUrl:                                                    'Main/memberLogout',
+    //homepage
+    homepageUrl:                                                        'Home',
+
     //lookup
     getAllCountryListUrl:                                               'Lookup/getAllCountries',
     getDatePickerContentsUrl:                                           'Lookup/getDatePickerContents',
@@ -10,7 +15,8 @@ var baseViewModel = {
     //Registration
     createNewAccountUrl:                                                'Registration/createNewAccount',
 
-
+    //Login
+    loginToAccountUrl:                                                  'Login/loginToAccount',
 
 
 
@@ -26,12 +32,27 @@ var baseViewModel = {
     initialize: function(baseUrl, serverDate) {
         var form = this;
         form.initializeDefaultValues(baseUrl, serverDate);
+        form.initializeEvents();
+    },
+
+    initializeEvents: function() {
+      var form = this;
+        $("#btnMemberLogout").click(function() {
+           form.memberLogout();
+        });
     },
 
     initializeDefaultValues: function(baseUrl, serverDate) {
         var form = this;
         form.baseUrl = baseUrl;
         form.serverDate = serverDate;
+    },
+
+    memberLogout: function() {
+        var isLogoutEmployee = confirm("Do you want to logout?");
+        if(isLogoutEmployee) {
+         window.location.href = baseViewModel.baseUrl + baseViewModel.memberLogoutUrl;
+        }
     }
 }
 

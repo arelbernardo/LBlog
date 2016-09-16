@@ -1,13 +1,13 @@
 body {
-    background: url('../../images/backgrounds/background_2.jpg') no-repeat center center fixed;
-    webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
 }
 
-#greetings-container {
+#greetings-container-header {
     padding-top: 15px;
     text-align: right;
-    color: white;
+    color: #684a08;
+}
+
+#greetings-container-body{
+    color: #000000;
 }
