@@ -2,7 +2,7 @@
 <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">LBlog</a>
+            <a class="navbar-brand" href="<?php echo base_url(); ?>">LBlog</a>
         </div>
         <ul class="nav navbar-nav">
 
@@ -25,7 +25,7 @@
                 switch($naviBarFlag) {
                     case "Main":
                         echo '
-                            <li id="btnSignUp"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                            <li id="btnOpenSignUpForm"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         ';
                         break;
@@ -47,6 +47,6 @@
 <script>
     $(function() {
         homepageFormViewModel.initialize();
-        baseViewModel.initialize("<?php echo base_url(); ?>");
+        baseViewModel.initialize("<?php echo base_url(); ?>", "<?php echo date('Y-m-d'); ?>");
     });
 </script>

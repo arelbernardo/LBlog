@@ -7,7 +7,7 @@ var homepageFormViewModel = {
 
     initializeEvents: function() {
         var form = this;
-        $("#btnSignUp").click(function() {
+        $("#btnOpenSignUpForm").click(function() {
             window.location.href = baseViewModel.baseUrl + 'Registration';
         });
     }

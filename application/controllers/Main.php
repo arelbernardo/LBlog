@@ -12,12 +12,14 @@ class Main extends Core_controller
     const IS_MAIN_PAGE = true;
     private $session;
 
-    public function __construct() {
-        $this->session = parent::__construct(SELF::IS_MAIN_PAGE);
+    public function __construct()
+    {
+        $this->session = parent::__construct(self::IS_MAIN_PAGE);
     }
 
     #public region
-    public function index() {
+    public function index()
+    {
         $pageContent = array(
             "head" => 'template/head_assets/welcome_head',
             "hasSession" => $this->session['hasActiveSession'],

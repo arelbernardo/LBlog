@@ -8,6 +8,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  *
  * @property CI_Loader $load                            Loads views and files
  * @property session_helper $session_helper             session helper
+ * @property date_helper $date_helper                   date helper
+ * @property input_helper $input_helper                 input helper
+ * @property encryption_helper $encrypt_helper             encrypt_helper
  */
 class Core_controller extends CI_Controller
 {
@@ -16,7 +19,10 @@ class Core_controller extends CI_Controller
         if(session_id() == '') {
             session_start();
         }
+        $this->load->library('common/Encryption_helper');
         $this->load->library('common/Session_helper');
+        $this->load->library('common/Date_helper');
+        $this->load->library('common/Input_helper');
         return $this->_validateSession($isHomepage);
     }
 

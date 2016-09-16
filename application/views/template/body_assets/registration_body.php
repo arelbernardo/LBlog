@@ -10,33 +10,45 @@
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 reg-content" id="registration-content">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <div class="input-group form-group">
-                                    <input type="text" class="form-control" id="txtLastname" placeholder="Last name" maxlength="100"/>
+                                <div class="form-group" id="saving-registration-response-message">
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="required-fields-legend"> * fields are required</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control fieldRequired" id="txtLastname" placeholder="Last name" maxlength="100"/>
                                     <span class="input-group-addon" id="basic-addon1">,</span>
-                                    <input type="text" class="form-control" id="txtFirstname" placeholder="First name" maxlength="100"/>
+                                    <input type="text" class="form-control fieldRequired" id="txtFirstname" placeholder="First name" maxlength="100"/>
                                 </div>
+                                <label id="lblNameValidation" class="form-label-validation-required">&nbsp;</label>
     <!--                            -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="txtUsername" placeholder="Username" maxlength="100"/>
+                                <input type="text" class="form-control fieldRequired" id="txtUsername" placeholder="Username" maxlength="20"/>
+                                <label id="lblUsernameValidation" class="form-label-validation-required">&nbsp;</label>
+
+                                <input type="password" class="form-control fieldRequired" id="txtPassword" placeholder="Password" maxlength="100"/>
+                                <label id="lblPasswordValidation" class="form-label-validation-required">&nbsp;</label>
+
+                                <input type="password" class="form-control fieldRequired" id="txtConfirmPassword" placeholder="Confirm Password" maxlength="20"/>
+                                <label id="lblConfirmPasswordValidation" class="form-label-validation-required">&nbsp;</label>
+
+                                <select class="form-control fieldRequired" id="cboCountry"></select>
+                                <label id="lblCountryValidation" class="form-label-validation-required">&nbsp;</label>
+                                <p class="form-label-validation-required">Birthday</p>
+                                <div class="input-group">
+                                    <select class="form-control fieldRequired" id="cboMonth"></select>
+                                    <span class="input-group-addon" id="basic-addon1"></span>
+                                    <select class="form-control fieldRequired" id="cboDay"></select>
+                                    <span class="input-group-addon" id="basic-addon1"></span>
+                                    <select class="form-control fieldRequired" id="cboYear"></select>
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="txtPassword" placeholder="Password" maxlength="100"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="txtBirthday">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirm Password" maxlength="100"/>
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control" id="cboCountry"></select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="txtEmail" placeholder="example@domain.com" maxlength="50"/>
-                                </div>
+                                <label id="lblBirthdayValidation" class="form-label-validation-required">&nbsp;</label>
+
+                                <input type="email" class="form-control fieldRequired" id="txtEmail" placeholder="example@domain.com" maxlength="50"/>
+                                <label id="lblEmailValidation" class="form-label-validation-required">&nbsp;</label>
                             </div>
                             <div class="panel-footer text-right">
-                                <button type="button" class="btn btn-success" id="btnSignUp">Sign Up</button>
+                                <input type="button" class="btn btn-success" id="btnSignUp" value="Sign Up">
                             </div>
                         </div>
                     </div>

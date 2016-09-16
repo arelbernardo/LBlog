@@ -6,6 +6,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Date: 15/09/2016
  * Time: 9:17 AM
  * @property LookupModel $LookupModel                           Lookup Model
+ * @property Date_helper $Date_helper                           Date_helper
  */
 class Lookup extends Core_controller
 {
@@ -19,6 +20,15 @@ class Lookup extends Core_controller
     public function getAllCountries() {
         echo json_encode($this->LookupModel->getAllCountries());
     }
-    
+
+    public function getDatePickerContents() {
+        $content = array(
+            "years" => $this->date_helper->getListOfYears(),
+            "months" => $this->date_helper->getListOfMonths(),
+            "days" => $this->date_helper->getListOfDays()
+        );
+        echo json_encode($content);
+    }
+
     #end region
 }

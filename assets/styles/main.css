@@ -25,6 +25,32 @@ textarea {
     resize: none;
 }
 
+input[type=text].fieldRequired,
+input[type=date].fieldRequired,
+input[type=email].fieldRequired,
+input[type=password].fieldRequired,
+textarea.fieldRequired{
+    background-image: url('../../../LBlog/assets/images/resources/required.png');
+    background-repeat:no-repeat;
+    background-position: right center;
+}
+select.fieldRequired {
+    background-image: url('../../../LBlog/assets/images/resources/required2.png');
+    background-repeat:no-repeat;
+    background-position: right center;
+}
+
+.required-fields-legend {
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: 100;
+    font-style: italic;
+}
+.form-label-validation-required {
+    color:#ffffff;
+    font-weight: 100;
+}
+
 /*Overriding bootstrap panel*/
 
 .panel {

@@ -1,10 +1,11 @@
 <?php
-
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Created by PhpStorm.
  * User: arel
  * Date: 15/09/2016
  * Time: 9:20 AM
+ * @property Date_helper $Date_helper                   Date_helper
  */
 class LookupModel extends Core_model
 {
