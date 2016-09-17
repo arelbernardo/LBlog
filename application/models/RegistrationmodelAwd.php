@@ -7,7 +7,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Time: 3:46 PM
  * @property encryption_helper $encryption_helper                       encryption_helper
  */
-class RegistrationModel extends Core_model
+class Registrationmodel extends Core_model
 {
     #construct region
     public function __construct() {

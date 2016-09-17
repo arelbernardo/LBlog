@@ -7,7 +7,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Time: 9:20 AM
  * @property Date_helper $Date_helper                   Date_helper
  */
-class LookupModel extends Core_model
+class Lookupmodel extends Core_model
 {
     #constructor region
     public function __construct() {

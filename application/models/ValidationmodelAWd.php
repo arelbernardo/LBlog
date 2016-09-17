@@ -6,7 +6,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Date: 16/09/2016
  * Time: 6:02 PM
  */
-class ValidationModel extends Core_model
+class Validationmodel extends Core_model
 {
     #construct
     public function __construct() {
