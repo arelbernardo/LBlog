@@ -66,9 +66,18 @@ class Date_helper {
     }
 
     public function getAgeByDate($date) {
+        //alternative way for computing age for lower version of php <= 5.2.*
+        $date = $this->getDate($date);
+        $today = $this->today();
+        $interval = strtotime($today) - strtotime($date);
+        $age =  floor((int) $interval / (((60 * 60) * 24) * 365.25));
+        return $age;
+    }
+
+    /*public function getAgeByDate($date) { for higher version of php supporint date interval diff
         $date = new DateTime($this->getDate($date));
         $today = new DateTime($this->today());
         $interval = $date->diff($today);
         return (int) $interval->format('%R%y');
-    }
+    }*/
 }
