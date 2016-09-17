@@ -86,10 +86,10 @@ $db['default'] = array(
 
 $db['cloud'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql1.000webhost.com',
-	'username' => 'a1313345_blog',
-	'password' => 'sitaw15',
-	'database' => 'a1313345_blog',
+	'hostname' => 'sql6.freemysqlhosting.net',
+	'username' => 'sql6136152',
+	'password' => 'zkcxhfZR3k',
+	'database' => 'sql6136152',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
