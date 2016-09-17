@@ -62,12 +62,12 @@ input[type=date].fieldRequired,
 input[type=email].fieldRequired,
 input[type=password].fieldRequired,
 textarea.fieldRequired{
-    background-image: url('../../../LBlog/assets/images/resources/required.png');
+    background-image: url('../images/resources/required.png');
     background-repeat:no-repeat;
     background-position: right center;
 }
 select.fieldRequired {
-    background-image: url('../../../LBlog/assets/images/resources/required2.png');
+    background-image: url('../images/resources/required2.png');
     background-repeat:no-repeat;
     background-position: right center;
 }
