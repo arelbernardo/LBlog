@@ -7,7 +7,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Time: 11:17 PM
  * @property encryption_helper $encryption_helper                   encryption_helper
  */
-class LoginModel extends Core_model
+class Loginmodel extends Core_model
 {
     public function __construct() {
         parent::__construct();
