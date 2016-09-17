@@ -5,7 +5,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * User: arel
  * Date: 16/09/2016
  * Time: 7:00 PM
- * @property LoginModel $LoginModel                 LoginModel
+ * @property Loginmodel $Loginmodel                 Loginmodel
  */
 class Login extends Core_controller
 {
@@ -13,7 +13,7 @@ class Login extends Core_controller
     private $session;
     public function __construct() {
         $this->session = parent::__construct();
-        $this->load->model("LoginModel");
+        $this->load->model("Loginmodel");
     }
 
     public function index() {
@@ -27,7 +27,7 @@ class Login extends Core_controller
 
     public function loginToAccount() {
         $data = $this->input->post("data");
-        $response = $this->LoginModel->loginToAccount($data);
+        $response = $this->Loginmodel->loginToAccount($data);
         if($response['hasRecord']) {
             $this->session_helper->setActiveSession($response['data']);
         }

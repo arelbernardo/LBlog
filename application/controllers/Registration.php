@@ -5,8 +5,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * User: arel
  * Date: 14/09/2016
  * Time: 3:52 PM
- * @property RegistrationModel $RegistrationModel                   RegistrationModel
- * @property ValidationModel $ValidationModel                       ValidationModel
+ * @property Registrationmodel $Registrationmodel                   RegistrationModel
+ * @property Validationmodel $Validationmodel                       ValidationModel
  */
 class Registration extends Core_controller
 {
@@ -15,8 +15,8 @@ class Registration extends Core_controller
 
     public function __construct() {
         $this->session = parent::__construct();
-        $this->load->model("RegistrationModel");
-        $this->load->model("ValidationModel");
+        $this->load->model("Registrationmodel");
+        $this->load->model("Validationmodel");
     }
 
     #public region
@@ -47,7 +47,7 @@ class Registration extends Core_controller
                 )
             );
             foreach($fields as $field) {
-                $duplicateResponse = $this->ValidationModel->validateDuplicateField($field);
+                $duplicateResponse = $this->Validationmodel->validateDuplicateField($field);
                 if($duplicateResponse['hasDuplicate']) {
                     $response = array(
                         "hasError" => true,
@@ -58,7 +58,7 @@ class Registration extends Core_controller
             }
 
             if(!$response["hasError"]) {
-                $response = $this->RegistrationModel->createNewAccount($personInformation['data']);
+                $response = $this->Registrationmodel->createNewAccount($personInformation['data']);
             }
         }
         echo json_encode($response);

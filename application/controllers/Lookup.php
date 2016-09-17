@@ -5,7 +5,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * User: arel
  * Date: 15/09/2016
  * Time: 9:17 AM
- * @property LookupModel $LookupModel                           Lookup Model
+ * @property Lookupmodel $Lookupmodel                           Lookup Model
  * @property Date_helper $Date_helper                           Date_helper
  */
 class Lookup extends Core_controller
@@ -13,12 +13,12 @@ class Lookup extends Core_controller
     #constructor region
     public function __construct() {
         parent::__construct();
-        $this->load->model('LookupModel');
+        $this->load->model('Lookupmodel');
     }
 
     #public region
     public function getAllCountries() {
-        echo json_encode($this->LookupModel->getAllCountries());
+        echo json_encode($this->Lookupmodel->getAllCountries());
     }
 
     public function getDatePickerContents() {
