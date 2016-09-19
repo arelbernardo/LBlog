@@ -43,7 +43,7 @@
                     <label id="lblEmailValidation" class="form-label-validation-required">&nbsp;</label>
                 </div>
                 <div class="panel-footer text-right">
-                    <input type="button" class="btn btn-primary" id="btnSignUp" value="Sign Up">
+                    <input type="button" class="btn btn-success" id="btnSignUp" value="Sign Up">
                 </div>
             </div>
         </div>

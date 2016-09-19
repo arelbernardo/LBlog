@@ -6,8 +6,9 @@ body {
     padding-top: 15px;
 }
 
-#registration-header {
-    color: #684a08;
+#registration-header,
+#registration-content-description {
+    color: #ffffff;
 }
 
 #registration-panel-form {
