@@ -17,9 +17,6 @@ class Newsfeedmodel extends Core_model
     public function showNewsFeedList($personInformation, $from, $to) {
         $this->db->select("
                     POST.Id AS PostId,
-                    POST.Content AS PostContent,
-                    POST.IsEdited AS IsEdited,
-                    POST.IsDeleted AS IsDeleted,
                     POST.PersonId AS PostOwnerId,
                     DATE_FORMAT((POST.DatePosted), '%b %d, %Y') AS DatePosted,
                     CONCAT( (Person.Firstname), ' ', (Person.Lastname) ) AS PostOwner,
@@ -31,9 +28,6 @@ class Newsfeedmodel extends Core_model
         $this->db->reset_query();
         $this->db->select("
                     POST.Id AS PostId,
-                    POST.Content AS PostContent,
-                    POST.IsEdited AS IsEdited,
-                    POST.IsDeleted AS IsDeleted,
                     POST.PersonId AS PostOwnerId,
                     DATE_FORMAT((POST.DatePosted), '%b %d, %Y') AS DatePosted,
                     CONCAT( (Person.Firstname), ' ', (Person.Lastname) ) AS PostOwner,
@@ -64,8 +58,38 @@ class Newsfeedmodel extends Core_model
             );
         }
         return $response;
+    }
 
-
+    public function showPostDetailsByPosterDetails($personId, $postId) {
+        $condition = array(
+            "POST.PersonId" => $personId,
+            "POST.Id" => $postId);
+        $this->db->select("
+                POST.Id AS PostId,
+                POST.PersonId AS PostOwnerId,
+                POST.Content AS PostContent,
+                DATE_FORMAT(POST.DatePosted, '%M %d, %Y') AS DatePosted,
+                POST.IsDeleted AS IsDeleted,
+                POST.IsEdited AS IsEdited,
+                CONCAT( (PERSON.Firstname), ' ', (PERSON.Lastname) ) AS PostOwner
+        ")
+            ->from("post AS POST")
+            ->join("person AS PERSON", "POST.PersonId = PERSON.Id")
+            ->where($condition);
+        $query = $this->db->get_compiled_select();
+        $result = $this->db->query($query);
+        if($result->num_rows() > 0) {
+            $response = array(
+                "hasResult" => true,
+                "data" => $result->row()
+            );
+        } else {
+            $response = array(
+                "hasResult" => false,
+                "data" => ""
+            );
+        }
+        return $response;
     }
     #end region
 }

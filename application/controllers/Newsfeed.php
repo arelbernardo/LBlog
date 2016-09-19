@@ -19,26 +19,40 @@ class Newsfeed extends Core_controller
 
     #public region
     public function showNewsFeedList() {
+        $session = $this->session_helper->getActiveSession();
+        $personInformation = $this->Personmodel->getMemberInformationBySessionCode($session['usercode']);
         $page = $this->input->get("p");
         if($page == 1) {
-            $from = 1;
+            $from = 0;
             $to = 10;
         } else {
-            $from = ($page * 10) - 9;
+            $from = ($page * 10) - 10;
             $to = $page * 10;
 
         }
-        $session = $this->session_helper->getActiveSession();
-        $personInformation = $this->Personmodel->getMemberInformationBySessionCode($session['usercode']);
         $newsFeedList = $this->Newsfeedmodel->showNewsFeedList($personInformation, $from, $to);
-        $newsFeedLayoutList = '';
-        if($newsFeedList['hasResult']) {
-            foreach($newsFeedList['data'] AS $post) {
-                $newsFeedLayoutList .= $this->html_helper->createHTMLLayoutForNewsFeedList($post);
+        $newsFeedLayoutList = $this->html_helper->createHTMLLayoutForNewsFeedList($newsFeedList);
+        echo json_encode(
+            array(
+                "htmlView" => $newsFeedLayoutList,
+                "newsFeedList" => $newsFeedList['hasResult'] ? $newsFeedList : '',
+                "hasNewsFeedList" => $newsFeedList['hasResult']
+            )
+        );
+    }
 
-            }
-        }
-        echo $newsFeedLayoutList;
+    public function showPostDetails() {
+        $id = $this->input->post("Id");
+        $id = explode("_", $id);
+        $personId = $id[1];
+        $postId = $id[2];
+        $result = $this->Newsfeedmodel->showPostDetailsByPosterDetails($personId, $postId);
+        $response = $this->html_helper->createHTMLLayoutForPost($result);
+        echo json_encode(
+            array(
+                "htmlView" => $response
+            )
+        );
     }
     #end region
 }

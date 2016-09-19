@@ -3,12 +3,16 @@ var baseViewModel = {
     serverDate: null,
 
     //links
+
     //Main
     memberLogoutUrl:                                                    'Main/memberLogout',
     //homepage
+
     homepageUrl:                                                        'Home',
+
     //Newsfeed
     showNewsFeedListUrl:                                                'Newsfeed/showNewsFeedList',
+    showPostDetailsUrl:                                                 'NewsFeed/showPostDetails',
 
     //lookup
     getAllCountryListUrl:                                               'Lookup/getAllCountries',

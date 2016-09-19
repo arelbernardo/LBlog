@@ -13,8 +13,8 @@
                 </div>
             </div>
             <div class="panel panel-default" id="post-list">
-                <div class="panel-heading" style="background-color: #1BBC9B !important;">
-                    <h4 style="color: #ffffff;">Recent Posts</h4>
+                <div class="panel-heading">
+                    <h4>Recent Posts</h4>
                 </div>
                 <div id="post-list-contents">
 
@@ -49,6 +49,9 @@
                 </div>
             </div>
             <div id="post-content" class="panel panel-default adjust-post-panel">
+
+
+
             </div>
         </div>
     </div>
