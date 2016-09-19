@@ -7,6 +7,8 @@ var baseViewModel = {
     memberLogoutUrl:                                                    'Main/memberLogout',
     //homepage
     homepageUrl:                                                        'Home',
+    //Newsfeed
+    showNewsFeedListUrl:                                                'Newsfeed/showNewsFeedList',
 
     //lookup
     getAllCountryListUrl:                                               'Lookup/getAllCountries',

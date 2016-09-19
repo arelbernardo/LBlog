@@ -10,7 +10,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * @property session_helper $session_helper             session helper
  * @property date_helper $date_helper                   date helper
  * @property input_helper $input_helper                 input helper
- * @property encryption_helper $encrypt_helper             encrypt_helper
+ * @property encryption_helper $encrypt_helper          encrypt_helper
+ * @property html_helper $html_helper                   html_helper
  */
 class Core_controller extends CI_Controller
 {
@@ -23,6 +24,7 @@ class Core_controller extends CI_Controller
         $this->load->library('common/Session_helper');
         $this->load->library('common/Date_helper');
         $this->load->library('common/Input_helper');
+        $this->load->library('common/Html_helper');
         return $this->_validateSession($isHomepage);
     }
 
@@ -32,7 +34,7 @@ class Core_controller extends CI_Controller
             return $session;
         } else {
             if($session['hasActiveSession']) {
-                Redirect(site_url("Main"));
+                //Redirect(site_url("Main"));
             } else {
                 return $session;
             }

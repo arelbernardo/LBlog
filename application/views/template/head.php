@@ -4,6 +4,14 @@
             $baseUrl = base_url();
             $otherTags = '';
             switch($headFlags) {
+                case "Home":
+                    echo '<title>Lblog</title>';
+                    $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/home/home.css">';
+                break;
+                case "Login":
+                    echo '<title>Lblog - Login</title>';
+                    $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/login/login.css">';
+                    break;
                 case "Main":
                     echo '<title>Lblog - Welcome</title>';
                     $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/welcome/welcome.css">';
@@ -11,10 +19,6 @@
                 case "Registration":
                     echo '<title>Lblog - Sign up</title>';
                     $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/registration/registration.css">';
-                break;
-                case "Login":
-                    echo '<title>Lblog - Login</title>';
-                    $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/login/login.css">';
                 break;
                 default:
                     echo '';

@@ -1,0 +1,68 @@
+.body-content {
+    /*background-color: #9e9e9e !important;*/
+}
+
+.post-margin {
+    margin-top: 15px;
+}
+
+#post-content {
+    min-height: 900px;
+    max-height: 900px;
+}
+
+.adjust-post-panel {
+    margin-left: -15px !important;
+}
+
+#post-list-container {
+    /*background-color: #d8e1e1;*/
+    /*min-height: 1000px;*/
+}
+
+#post-list-contents {
+    max-height: 610px;
+    min-height: 610px;
+    overflow-y: scroll;
+}
+
+#post-list-contents hr {
+    margin: 0 !important;
+}
+
+#post-list {
+    /*min-height: 815px;
+    max-height: 815px;*/
+}
+
+#post-list-pager ul.pagination {
+    margin: 0 !important;
+}
+
+.post a .linkPostName {
+    text-decoration: none;
+}
+
+.post span .img-poster {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.post span.post-time {
+    font-size: 11px;
+    color: #757575;
+}
+
+
+/*Overriding bootstrap panel*/
+
+.panel {
+background-color: #ffffff;/*#f4f2ed;*//*#E1F5FE;*/
+}
+
+.panel-default {
+/*border: 1px solid #e8e6e2 !important;*/
+border: 0 !important;
+}
+

@@ -6,12 +6,14 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  * Date: 16/09/2016
  * Time: 3:46 PM
  * @property encryption_helper $encryption_helper                       encryption_helper
+ * @property Personmodel $Personmodel                                   Personmodel
  */
 class Registrationmodel extends Core_model
 {
     #construct region
     public function __construct() {
         parent::__construct();
+        $this->load->model("Personmodel");
     }
 
     #create record region
@@ -27,6 +29,7 @@ class Registrationmodel extends Core_model
             $this->db->insert("person", $personData);
             $personId = $this->getLastInsertedId();
             $member = array(
+                "UserCode" => $this->Personmodel->getNextUserCode(),
                 "Username" => $data['userName'],
                 "Password" => $this->encryption_helper->encrypt_password($data['password']),
                 "IsActive" => 1,

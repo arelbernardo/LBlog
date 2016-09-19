@@ -20,11 +20,20 @@ class Session_helper
         );
     }
 
-    public function setActiveSession($username) {
-        $_SESSION['username'] = $username;
+    public function setActiveSession($personInfo) {
+        $_SESSION['username'] = $personInfo->Username;
+        $_SESSION['usercode'] = $personInfo->UserCode;
+    }
+
+    public function getActiveSession() {
+        return array(
+            "username" => $_SESSION['username'],
+            "usercode" => $_SESSION['usercode']
+        );
     }
 
     public function destroyActiveSession() {
         unset($_SESSION['username']);
+        unset($_SESSION['usercode']);
     }
 }

@@ -3,43 +3,52 @@
     $baseUrl = base_url();
     $profileName = isset($_SESSION['username']) ? "[".$_SESSION['username']."]" : 'Home';
     $otherNavButtons = '';
+    $siteName = '';
     if($hasSession) {
+        $siteName = '<a class="navbar-brand" href="'.$baseUrl.'Home">LBlog</a>';
         switch($headFlags) {
             case "Main":
             case "Home":
-            $otherNavButtons = '<li class="active"><a href="#">'.$profileName.'</a></li>
-                      <li id="btnMemberLogout"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
-                break;
+            $otherNavButtons = '
+                <!--<li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-warning glyphicon glyphicon-search"></button>
+                    </form>
+                </li>-->
+                <li class="active"><a href="#">'.$profileName.'</a></li>
+              <li id="btnMemberLogout"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
+            break;
             default:
                 echo '';
-                break;
+            break;
         }
     } else {
+        $siteName = '<a class="navbar-brand" href="'.$baseUrl.'">LBlog</a>';
         switch($headFlags) {
             case "Main":
                 $otherNavButtons = '<li id="btnOpenSignUpForm"><a href="#"><span class="glyphicon glyphicon-user"></span> Create an Account</a></li>
                     <li><a href="'.$baseUrl.'Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
-                break;
+            break;
             case "Registration":
                 $otherNavButtons = '<li><a href="'.$baseUrl.'Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
-                break;
+            break;
             case "Login":
                 $otherNavButtons = '<li id="btnOpenSignUpForm"><a href="#"><span class="glyphicon glyphicon-user"></span> Create an Account</a></li>';
-                break;
+            break;
             default:
                 echo '';
-                break;
+            break;
         }
     }
 ?>
 <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo base_url(); ?>">LBlog</a>
+            <?php echo $siteName; ?>
         </div>
-        <ul class="nav navbar-nav">
-
-        </ul>
         <ul class="nav navbar-nav navbar-right">
             <?php echo $otherNavButtons; ?>
         </ul>

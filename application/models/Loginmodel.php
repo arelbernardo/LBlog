@@ -18,13 +18,13 @@ class Loginmodel extends Core_model
             "Username" => $data['username'],
             "Password" => $this->encryption_helper->encrypt_password($data['password']),
         );
-        $this->db->select("*")->from("member")->where($where);
+        $this->db->select("UserCode, Username")->from("member")->where($where);
         $query = $this->db->get_compiled_select();
         $result = $this->db->query($query);
         if($result->num_rows() > 0) {
             return array(
                 "hasRecord" => true,
-                "data" => $data['username'],
+                "data" => $result->row(),
             );
         } else {
             return array(

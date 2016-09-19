@@ -1,4 +1,6 @@
-/*
+body {
+    background-color: #2A3E59 !important;
+}/*
 ======================================
 =============STYLING INFO=============
 ======================================
@@ -34,6 +36,7 @@ background-color: rgba(221, 221, 221, 0.33);
     margin-top: 60px;
     /*background-color: rgba(221, 221, 221, 0.33);*/
     min-height: 900px;
+    margin-bottom: 250px;
 }
 
 @media (max-width: 768px) {
@@ -81,24 +84,4 @@ select.fieldRequired {
 .form-label-validation-required {
     color: #684a08;
     font-weight: 100;
-}
-
-/*Overriding bootstrap panel*/
-
-.panel {
-    background-color: #E0E0E0;
-}
-
-.panel-default {
-    border: medium !important;
-}
-
-.panel-default>.panel-heading {
-    background-color: #E0E0E0 !important;
-    border-color: #E0E0E0;
-}
-
-.panel-footer {
-    background-color: #E0E0E0 !important;
-    border-color: #BDBDBD;
 }
