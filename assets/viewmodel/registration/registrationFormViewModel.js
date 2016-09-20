@@ -102,35 +102,35 @@ var registrationFormViewModel = {
         form.hideMessageResponse();
         form.clearValidationMessageFields();
         if(data.lastName == '' || data.firstName == '') {
-            $("#lblNameValidation").html("Field is required");
+            $("#lblNameValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if (data.userName == '') {
-            $("#lblUsernameValidation").html("Field is required");
+            $("#lblUsernameValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if (data.password == '') {
-            $("#lblPasswordValidation").html("Field is required");
+            $("#lblPasswordValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if (data.confirmPassword == '') {
-            $("#lblConfirmPasswordValidation").html("Field is required");
+            $("#lblConfirmPasswordValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if ( (data.password != '' && data.confirmPassword != '') && (data.password != data.confirmPassword) ) {
-            $("#lblPasswordValidation").html("Password does not match");
+            $("#lblPasswordValidation").html(messageFormViewModel.password_mismatch);
             failedFields++;
         }
         if (data.countryId == 0) {
-            $("#lblCountryValidation").html("Field is required");
+            $("#lblCountryValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if (data.birthdayMonth == 0 || data.birthdayDay == 0 || data.birthdayYear == 0) {
-            $("#lblBirthdayValidation").html("Field is required");
+            $("#lblBirthdayValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if (data.email == '') {
-            $("#lblEmailValidation").html("Field is required");
+            $("#lblEmailValidation").html(messageFormViewModel.field_required);
             failedFields++;
         }
         if(failedFields != 0) {

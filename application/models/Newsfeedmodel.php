@@ -19,6 +19,7 @@ class Newsfeedmodel extends Core_model
                     POST.Id AS PostId,
                     POST.PersonId AS PostOwnerId,
                     DATE_FORMAT((POST.DatePosted), '%b %d, %Y') AS DatePosted,
+                    POST.DatePosted AS AccurateDatePosted,
                     CONCAT( (Person.Firstname), ' ', (Person.Lastname) ) AS PostOwner,
                     (BUDDY.PersonId) AS ReferencePosterId")
             ->from("post AS POST")
@@ -30,6 +31,7 @@ class Newsfeedmodel extends Core_model
                     POST.Id AS PostId,
                     POST.PersonId AS PostOwnerId,
                     DATE_FORMAT((POST.DatePosted), '%b %d, %Y') AS DatePosted,
+                    POST.DatePosted AS AccurateDatePosted,
                     CONCAT( (Person.Firstname), ' ', (Person.Lastname) ) AS PostOwner,
                     (BUDDY.BuddyId) AS ReferencePosterId")
             ->from("post AS POST")
@@ -42,19 +44,24 @@ class Newsfeedmodel extends Core_model
             ->select("*")
             ->from("( ({$query1}) UNION ({$query2}) ) AS A")
             ->where("A.ReferencePosterId", $personInformation->PersonId)
-            ->order_by("A.DatePosted, A.PostId")
-            ->limit($to, $from);
-        $query = $this->db->get_compiled_select();
-        $result = $this->db->query($query);
+            ->order_by("A.AccurateDatePosted", "DESC");
+        $queryWithoutLimit = $this->db->get_compiled_select();
+        $queryWithLimit = $queryWithoutLimit." LIMIT $from, $to";
+        $result = $this->db->query($queryWithLimit);
+        $resultWithoutLimit = $this->db->query($queryWithoutLimit);
         if($result->num_rows() > 0) {
             $response = array(
                 "hasResult" => true,
-                "data" => $result->result()
+                "data" => $result->result(),
+                "totalCount" => $resultWithoutLimit->num_rows(),
+                "currentCountByLimit" => $result->num_rows()
             );
         } else {
             $response = array(
                 "hasResult" => false,
-                "data" => ""
+                "data" => "",
+                "totalCount" => 0,
+                "currentCountByLimit" => 0
             );
         }
         return $response;

@@ -41,12 +41,12 @@ var loginFormViewModel = {
         var model = form.model;
         form.clearValidationMessageFields();
         if(model.username == '') {
-            $("#lblUsernameValidation").html('Field is required.');
+            $("#lblUsernameValidation").html(messageFormViewModel.field_required);
             errorCount++;
         }
 
         if(model.password == '') {
-            $("#lblPasswordValidation").html('Field is required.');
+            $("#lblPasswordValidation").html(messageFormViewModel.field_required);
             errorCount++;
         }
 
@@ -89,12 +89,12 @@ var loginFormViewModel = {
         var messageColorClass = '', messageTitle = '', messageContent = '';
         if(isRegistered) {
             messageColorClass = 'alert-success';
-            messageTitle = "Success";
+            messageTitle = messageFormViewModel.title_success;
             messageContent = "Welcome " + form.model.username;
         } else {
             messageColorClass = 'alert-warning';
-            messageTitle = "Error";
-            messageContent = "Login failed";
+            messageTitle = messageFormViewModel.title_error;
+            messageContent = messageFormViewModel.login_failed;
         }
         $("#login-response-message").html('<div class="alert ' + messageColorClass + '">' +
             '<strong>' + messageTitle + ': </strong> ' + messageContent +

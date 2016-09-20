@@ -18,7 +18,7 @@
                         <button type="submit" class="btn btn-warning glyphicon glyphicon-search"></button>
                     </form>
                 </li>-->
-                <li class="active"><a href="#">'.$profileName.'</a></li>
+                <li class=""><a href="#">'.$profileName.'</a></li>
               <li id="btnMemberLogout"><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
             break;
             default:

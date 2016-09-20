@@ -35,5 +35,7 @@
         <script type="text/javascript" src="<?php echo base_url()?>assets/library/bootstrap/js/bootstrap.min.js"></script>
         <!---->
         <script type="text/javascript" src="<?php echo base_url()?>assets/viewmodel/baseViewModel.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>assets/viewmodel/messageFormViewModel.js"></script>
+
         <?php echo $otherTags; ?>
     </head>

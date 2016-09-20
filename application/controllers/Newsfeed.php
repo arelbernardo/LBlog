@@ -36,7 +36,9 @@ class Newsfeed extends Core_controller
             array(
                 "htmlView" => $newsFeedLayoutList,
                 "newsFeedList" => $newsFeedList['hasResult'] ? $newsFeedList : '',
-                "hasNewsFeedList" => $newsFeedList['hasResult']
+                "hasNewsFeedList" => $newsFeedList['hasResult'],
+                "maxPageList" => ceil($newsFeedList['totalCount'] / 10),
+                "maxItemOnList" => $newsFeedList['currentCountByLimit']
             )
         );
     }

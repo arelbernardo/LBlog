@@ -6,15 +6,6 @@
     margin-top: 15px;
 }
 
-#post-content {
-    min-height: 800px;
-    max-height: 800px;
-}
-
-.adjust-post-panel {
-    margin-left: -15px !important;
-}
-
 #post-list-container {
     /*background-color: #d8e1e1;*/
     /*min-height: 1000px;*/
@@ -23,7 +14,11 @@
 #post-list-contents {
     max-height: 610px;
     min-height: 610px;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
+}
+
+#post-list-contents .panel-body.checked{
+    background-color: #dddddd;
 }
 
 #post-list-contents hr {
@@ -31,7 +26,6 @@
 }
 
 #post-list {
-
     /*min-height: 815px;
     max-height: 815px;*/
 }
@@ -40,8 +34,6 @@
     background-color: #1BBC9B !important;
     color: #ffffff;
 }
-
-#post-list
 
 #post-list-pager ul.pagination {
     margin: 0 !important;
@@ -76,6 +68,11 @@ border: 0 !important;
 
 /*post related css*/
 
+#post-content {
+    /*min-height: 800px;
+    max-height: 800px;*/
+}
+
 #post-detail-content {
     min-height: 400px;
     max-height: 500px;
@@ -102,6 +99,7 @@ border: 0 !important;
     font-size: 18px;
     vertical-align: top;
 }
+
 #post-content .panel-footer#post-datetime {
     color: #838383;
     font-size: 12px;
