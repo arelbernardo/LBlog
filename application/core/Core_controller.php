@@ -35,6 +35,7 @@ class Core_controller extends CI_Controller
         } else {
             if($session['hasActiveSession']) {
                 //Redirect(site_url("Main"));
+                return $session;
             } else {
                 return $session;
             }

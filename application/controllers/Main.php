@@ -30,7 +30,7 @@ class Main extends Core_controller
 
     public function memberLogout() {
         $this->session_helper->destroyActiveSession();
-        Redirect(site_url("Main"));
+        Redirect(site_url("main"));
     }
     #end region
 }

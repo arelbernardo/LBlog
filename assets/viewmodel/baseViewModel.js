@@ -5,24 +5,24 @@ var baseViewModel = {
     //links
 
     //Main
-    memberLogoutUrl:                                                    'Main/memberLogout',
+    memberLogoutUrl:                                                    'main/memberLogout',
     //homepage
 
-    homepageUrl:                                                        'Home',
+    homepageUrl:                                                        'home',
 
     //Newsfeed
-    showNewsFeedListUrl:                                                'Newsfeed/showNewsFeedList',
-    showPostDetailsUrl:                                                 'NewsFeed/showPostDetails',
+    showNewsFeedListUrl:                                                'newsfeed/showNewsFeedList',
+    showPostDetailsUrl:                                                 'newsFeed/showPostDetails',
 
     //lookup
-    getAllCountryListUrl:                                               'Lookup/getAllCountries',
-    getDatePickerContentsUrl:                                           'Lookup/getDatePickerContents',
+    getAllCountryListUrl:                                               'lookup/getAllCountries',
+    getDatePickerContentsUrl:                                           'lookup/getDatePickerContents',
 
     //Registration
-    createNewAccountUrl:                                                'Registration/createNewAccount',
+    createNewAccountUrl:                                                'registration/createNewAccount',
 
     //Login
-    loginToAccountUrl:                                                  'Login/loginToAccount',
+    loginToAccountUrl:                                                  'login/loginToAccount',
 
 
 

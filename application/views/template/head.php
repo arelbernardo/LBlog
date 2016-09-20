@@ -3,6 +3,7 @@
         <?php
             $baseUrl = base_url();
             $otherTags = '';
+            $profileName = isset($_SESSION['username']) ? $_SESSION['username'] : '';
             switch($headFlags) {
                 case "Home":
                     echo '<title>Lblog</title>';
@@ -16,6 +17,10 @@
                     echo '<title>Lblog - Welcome</title>';
                     $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/welcome/welcome.css">';
                 break;
+                case "Profile":
+                    echo '<title>' . $profileName . '</title>';
+                    $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/profile/profile.css">';
+                    break;
                 case "Registration":
                     echo '<title>Lblog - Sign up</title>';
                     $otherTags = '<link rel="stylesheet" href="'.$baseUrl.'assets/styles/registration/registration.css">';
