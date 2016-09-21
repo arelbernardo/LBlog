@@ -44,7 +44,7 @@
         </div>
     </div>
 
-    <!--<div class="col-xs-12 col-md-12 col-md-8 col-lg-8">
+    <div class="col-xs-12 col-md-12 col-md-8 col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Create a blog</h4>
@@ -56,5 +56,5 @@
                 <button class="btn btn-success">Post</button>
             </div>
         </div>
-    </div>-->
+    </div>
 </div>
