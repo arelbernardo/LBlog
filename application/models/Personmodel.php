@@ -16,7 +16,7 @@ class Personmodel extends Core_model
     #public region
     public function getNextUserCode() {
         return (string) $this->db->query("
-            SELECT    IF( MAX(Id) IS NULL, LPAD(1, 11, '0'), LPAD(Id + 1, 11, '0') ) AS UserCode
+            SELECT    IF(Id IS NULL, LPAD(1, 11, '0'), LPAD(MAX(Id) + 1, 11, '0')) AS UserCode
             FROM      member")->row()->UserCode;
     }
 
