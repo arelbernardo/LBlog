@@ -15,7 +15,8 @@
         array(
             "body" => $body,
             "hasSession" => $hasSession,
-            "headFlags" => $headFlags
+            "headFlags" => $headFlags,
+            "data" => isset($data) ? $data: ''
         )
     );
     $this->load->view('template/footer');

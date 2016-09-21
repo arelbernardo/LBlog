@@ -13,12 +13,18 @@ div#profile-info-header-container {
     height:200px;
 }
 
-#profile-container #profile-cover-background span {
+#profile-container #profile-cover-background span:not(.glyphicon) {
     color:#ffffff;
     font-size: 28px;
     position: absolute;
-    bottom: 50%;
-    right: 20px;
+    bottom: 150px;
+    right: 30px;
+}
+
+#profile-container #profile-cover-background button {
+    position: absolute;
+    bottom: 160px;
+    left: 30px;
 }
 
 #profile-picture-container img#profile-img {
@@ -30,7 +36,7 @@ div#profile-info-header-container {
 }
 
 #profile-info-header-container #basic-profile-info-container {
-    min-height: 220px;
+    min-height: 80px;
     width: 100%;
     background-color: #ffffff;
     margin-top: -180px;
@@ -41,3 +47,11 @@ div#profile-info-header-container {
     padding-top: 15px;
 }
 
+#basic-profile-info-container
+div#basic-profile-info-content {
+    min-height: 120px;
+}
+
+.basic-profile-info {
+
+}

@@ -21,6 +21,8 @@ class Personmodel extends Core_model
     }
 
     public function getMemberInformationBySessionCode($usercode) {
+        $sessionInfo = $this->session_helper->getActiveSession();
+        $sessionCode = $sessionInfo['usercode'];
         $this->db
             ->select("
                 M.Id AS MemberId,
@@ -28,19 +30,67 @@ class Personmodel extends Core_model
                 M.IsActive AS IsActive,
                 P.Id AS PersonId,
                 CONCAT( (P.Lastname), ', ', (P.Firstname) ) AS PersonName,
+                CONCAT( (P.Firstname), ' ', (P.Lastname) ) AS NormalPersonName,
                 P.Birthday AS Birthday,
-                P.Address AS Address,
+                IFNULL(P.Address, '') AS Address,
                 P.EmailAddress,
                 C.Id AS CountryId,
-                C.CountryName AS CountryName")
+                C.CountryName AS CountryName,
+                IF( (M.UserCode) = ({$sessionCode}), (1), (0)) AS IsCurrentProfile")
             ->from("member AS M")
             ->join("person AS P","M.PersonId = P.Id")
             ->join("country AS C","C.Id = P.CountryId")
-        ->where("M.UserCode", $usercode);
+        ->where(array(
+            "M.UserCode" => $usercode,
+            "M.IsActive" => 1));
         $query = $this->db->get_compiled_select();
         $result = $this->db->query($query);
         return $result->row();
     }
 
+    public function validateIfUsernameIsExisting($username) {
+        $this->db->select("*")->from("member")->where(array("Username" => $username));
+        $query = $this->db->get_compiled_select();
+        $result = $this->db->query($query);
+        if($result->num_rows() > 0) {
+            $response = array(
+                "hasResult" => true,
+                "data" => $result->row()
+            );
+        } else {
+            $response = array(
+                "hasResult" => false,
+                "data" => ""
+            );
+        }
+        return $response;
+    }
+
+    public function validateIfPersonIsBuddyByPersonId($buddyId) {
+        $session = $this->session_helper->getActiveSession();
+        $sessionUserCode = $session['usercode'];
+        $personInfo = $this->getMemberInformationBySessionCode($sessionUserCode);
+        $personId = $personInfo->PersonId;
+        if($buddyId == $personId) {
+            $result = new stdClass();
+            $result->buddyStatus = 'self';
+        } else {
+            $condition = array(
+                "BuddyId" => $buddyId,
+                "PersonId" => $personId
+            );
+            $this->db
+                ->select("
+                CASE
+                    WHEN COUNT(*) > 0 THEN 'buddy'
+                    ELSE 'not_buddy'
+                    END AS buddyStatus")
+                ->from("buddy")
+                ->where($condition);
+            $query = $this->db->get_compiled_select();
+            $result = $this->db->query($query)->row();
+        }
+        return $result->buddyStatus;
+    }
     #end region
 }

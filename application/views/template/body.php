@@ -6,7 +6,7 @@
             "hasSession" => $hasSession
         )
     );
-    $this->load->view($body);
+    $this->load->view($body, $data);
 ?>
 <div class="container">
     <div class="modal fade" id="modal-container" role="dialog">
